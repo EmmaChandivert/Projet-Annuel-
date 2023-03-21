@@ -1,0 +1,15 @@
+<?php
+//Pour connexion 
+$dbname = 'mysql:host=localhost;dbname=afuentes;port=1521;charset=utf8'; 
+$username = 'afuentes'; 
+$userpassword = '!22016865!'; 
+
+try{
+
+    $pdo = new PDO($dbname, $username, $userpassword); 
+    echo ("vous etes connectés"); 
+}
+catch (exception $e) {
+    dir('echec de connexion : '. $e -> getMessage()); 
+}
+?> 
