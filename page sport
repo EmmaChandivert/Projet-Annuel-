@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title> A </title>
+        <link rel="stylesheet" href="Page sport.css">
+    </head>
+
+    <body>
+        <a href="Index.php" style = "text-decoration : none" > <h1>WIKI SPORT </h1> </a>
+         <br>
+      
+        <Form>
+            <form method="post">
+                <input  type="text" placeholder="Rechercher un sport">
+        </FORm> 
+        <table>
+            <tr>    
+            </form> </td>
+            <td> 
+               <h3> <strong class="lettre">A </strong> B C D E F G H I J K L M N O P Q R S T U V W X Y Z </h3>
+            </td>
+            <td>
+                <table>
+                    <td  align="left" class="cell">
+                        <h5  class="conins" ><br> Connexion / Inscription</h5> 
+                    </td>
+                </table>
+            </td>
+        </tr>
+        </table>
+           
+            <tr>
+                <td> 
+                    <article>
+                        <table class="tabsport" border="3px" align="center">
+                            <td  >
+                                <h2><i>"Nom d'un sport" </i> </h2>
+                            </td>
+                        <tr>
+                            <td >
+                                <p>
+                                <i> "Définition du sport avec caractériostique selon les informations données dans la base de données
+                                    Quam ob rem cave Catoni anteponas ne istum quidem ipsum, quem Apollo, ut ais, sapientissimum iudicavit; huius enim facta, illius dicta laudantur. De me autem, ut iam cum utroque vestrum loquar, sic habetote.
+                                    Isdem diebus Apollinaris Domitiani gener, paulo ante agens palatii Caesaris curam, ad Mesopotamiam missus a socero per militares numeros immodice scrutabatur, an quaedam altiora meditantis iam Galli secreta susceperint scripta, qui conpertis Antiochiae gestis per minorem Armeniam lapsus Constantinopolim petit exindeque per protectores retractus artissime tenebatur.
+                                </i>
+                                 </p> 
+                            </td> 
+                            <td rowspan="2">
+                                <img src="chat.jpg" alt="Miss teigne" height="100%" width="100%">
+                            </td>  
+                        </tr>
+                        <tr>
+                            <td >
+                                <p>
+                                <i> "Description du sport selon les informations données dans la base de données
+                                    Quam ob rem cave Catoni anteponas ne istum quidem ipsum, quem Apollo, ut ais, sapientissimum iudicavit; huius enim facta, illius dicta laudantur. De me autem, ut iam cum utroque vestrum loquar, sic habetote.
+                                    Isdem diebus Apollinaris Domitiani gener, paulo ante agens palatii Caesaris curam, ad Mesopotamiam missus a socero per militares numeros immodice scrutabatur, an quaedam altiora meditantis iam Galli secreta susceperint scripta, qui conpertis Antiochiae gestis per minorem Armeniam lapsus Constantinopolim petit exindeque per protectores retractus artissime tenebatur.
+                                </i>
+                                 </p> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>
+                                <i> "Championat selon les informations données dans la base de données
+                                    Quam ob rem cave Catoni anteponas ne istum quidem ipsum, quem Apollo, ut ais, sapientissimum iudicavit; huius enim facta, illius dicta laudantur. De me autem, ut iam cum utroque vestrum loquar, sic habetote.
+                                    Isdem diebus Apollinaris Domitiani gener, paulo ante agens palatii Caesaris curam, ad Mesopotamiam missus a socero per militares numeros immodice scrutabatur, an quaedam altiora meditantis iam Galli secreta susceperint scripta, qui conpertis Antiochiae gestis per minorem Armeniam lapsus Constantinopolim petit exindeque per protectores retractus artissime tenebatur.
+                                </i>
+                                 </p> 
+                            </td> 
+                            <td>
+                                <i> "cc les gars les coms c'est trop bien"
+                                </i>
+                            </td>  
+                        </tr>
+                         </table>  
+                    </article>
+                </td>
+            </tr>
+            <br>
+            <table class="tabsport" border="3px" align="center">
+                            <td>
+                                <h2><i>On change ta gueule </i> </h2>
+                            </td>
+                            <td>
+                                <h2><i>ptdrr on veut pas de toi </i> </h2>
+                            </td>
+                            <td>
+                                <h2><i>les coms c'est bien </i> </h2>
+                            </td>
+                        <tr>
+    </body>
+
+</html> 
