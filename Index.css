@@ -59,3 +59,24 @@ body{
 .fondins{
     background-color: rgb(237, 217, 189) ;
 }
+
+
+.mon_bouton {
+    background-color:rgb(255, 245, 231) ; /* Couleur de fond */
+    border: none; /* Pas de bordure */
+    color: rgb(0, 0, 0); /* Couleur du texte */
+    padding: 0% 0%; /* Espacement du texte */
+    text-align: center; /* Alignement horizontal */
+    text-decoration: none; /* Pas de soulignement */
+    display: inline-block; /* Affichage en ligne */
+    font-size: 16px; /* Taille de police */
+    margin: 1% 1%; /* Marge */
+    cursor: pointer; /* Curseur de souris */
+    border-radius: 4px; /* Coins arrondis */
+    transition: 0.3s; /* Transition pour l'effet hover */
+  }
+  
+  .mon-bouton:hover {
+    background-color: #3e8e41; /* Nouvelle couleur de fond au survol */
+  }
+  

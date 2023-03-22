@@ -1,4 +1,7 @@
-    <html>
+<?php include "connexion_bdd.php"; ?>
+<doctype html>
+
+<html>
             <head>
                 <meta charset="utf-8"/>
                 <title> Inscription </title>
@@ -30,15 +33,17 @@
                 </form> 
 
                 <div class="fondins" align="center">
-                    <form>
+                    <form method="post" action="connexion_bdd.php">
                         <br>
-                        <label> Votre nom : <input type= "text" placeholder="Nom"> </label> <br>
-                        <label> Votre prénom : <input type= "text" placeholder="Prénom"> </label> <br>
-                        <label> Votre date de naissance : <input type="date"placeholder="jj/mm/aaaa"> </label> <br>
-                        <label> Votre adresse mail : <input type= "text"placeholder="Adresse mail"> </label> <br>
-                        <label> Choisissez un mot de passe : <input type= "password"placeholder="Mot de passe"> </label> <br>
-                        <label> Confirmation du mot de passe : <input type= "password"placeholder="Confirmation mot de passe"> </label> <br>
-                        </label> <br>
+                        <label> Votre psuedo : <input type="text" id="Pseudo" name="Pseudo" required placeholder="Pseudo"> </label> <br>
+                        <label> Votre nom : <input type="text" id="Nom" name="Nom" required placeholder="Nom"> </label> <br>
+                        <label> Votre prénom : <input type= "text" id="Prenom" name="Prenom" required placeholder="Prénom"> </label> <br>
+                        <label> Votre date de naissance : <input type="date" required placeholder="jj/mm/aaaa"> </label> <br>
+                        <label> Votre adresse mail : <input type= "mail" id="Addr" name="Addr" required placeholder="Adresse mail"> </label> <br>
+                        <label> Choisissez un mot de passe : <input type= "password" id="Password" name="Password" required placeholder="Mot de passe"> </label> <br>
+                        <label> Confirmation du mot de passe : <input type= "password" id="ConfPassword" name="ConfPassword" required nameplaceholder="Confirmation mot de passe"> </label> <br>
+                        <input type="submit" name="validation">
+                    </label> <br>
                     </form>
                 </div>
             </body>

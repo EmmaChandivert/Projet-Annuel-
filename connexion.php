@@ -1,3 +1,7 @@
+<?php include "connexion_bdd.php"; ?>
+<doctype html>
+
+
 <html>
         <head>
             <meta charset="utf-8"/>

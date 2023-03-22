@@ -1,3 +1,6 @@
+<?php include "connexion_bdd.php"; ?>
+<doctype html>
+
 <html>
         <head>
             <meta charset="utf-8"/>
@@ -67,7 +70,17 @@
 
                     <!-- case du tableau avec les boutons sous forme de lettre qui renvoie sur les autres pages du sites -->
                     <td> 
-                        <h3 class="decolettre"> <a href="A.php" style = "text-decoration : none" > <h3> A </h3> </a> B C D E F G H I J K L M N O P Q R S T U V W X Y Z  </h3> 
+                    <form method="post" action="">
+                    <p>Cliquez sur un bouton :</p>
+                    <button class="mon_bouton" type="submit" name="bouton" value="bouton1">A</button>
+                     <button type="submit" name="bouton" value="bouton2">B</button>
+                    <button type="submit" name="bouton" value="bouton3">C</button>
+                    </form>
+
+                        
+
+
+                    A  B C D E F G H I J K L M N O P Q R S T U V W X Y Z  
                     </td>
                 </tr>
 
@@ -84,3 +97,5 @@
             </table>
         </body>
     </html>
+
+    
