@@ -33,13 +33,14 @@
                     <input type="text" placeholder="Rechercher un sport">
                 </form> 
 
-            
-                 <form method="post" action="connexion_bdd.php" class="fondins" align="center">
+                <form class="fondins" align="center">
+                 <form method="post" action="connexion_bdd.php">
                         <br>
                         <label> Votre pseudo : <input type="text" id="Pseudo2" name="Pseudo2" required placeholder="Pseudo"> </label> <br>
                         <label> Votre mot de passe : <input type= "password" id="mdp" name="mdp" required placeholder="Mot de passe"> </label> <br>
                         <input type="submit" name="validation">
                     </label> <br>
+                    </form>
                     </form>
                 
             </body>

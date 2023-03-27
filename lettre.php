@@ -107,20 +107,41 @@
                             <tr>
                                 <td>
                                     <p align='left'>
-                                    <?php 
-                                    $Initiale=$_GET['Initiale']; 
-                                    $sql="SELECT * FROM Sport WHERE Initiale = '$Initiale'"; 
+                                    <!--  
+                                    // $Initiale=$_GET['Initiale']; 
+                                    // $sql="SELECT * FROM Sport WHERE Initiale = '$Initiale'"; 
                                     
-                                    echo "Les sports commençant par $Initiale sont les suivants : "; 
-                                    echo"<br>"; echo"<br>"; 
-                                    foreach ($pdo->query($sql) as $ligne){
-                                    echo "<div class='nomsport'>";
-                                    echo $ligne['NomS']."<br></div>";
-                                    echo "<div class='cara_sport'>";
-                                    echo strval($ligne['Resume']) . "<br></div>";
-                                    echo "<br>";
-                                    }
-                                    ?> 
+                                    // echo "Les sports commençant par $Initiale sont les suivants : "; 
+                                    // echo"<br>"; echo"<br>"; 
+                                    // foreach($pdo->query($sql) as $ligne){
+                                    // echo "<div class='nomsport'>";
+                                    // echo $ligne['NomS']."<br></div>";
+                                    // echo "<div class='cara_sport'>";
+                                    // echo strval($ligne['Resume']) . "<br></div>";
+                                    // echo "<br>";
+                                    // }
+                                    // ?>  -->
+                                    <!-- 
+                                        <?php
+$Initiale = isset($_GET['Initiale']) ? $_GET['Initiale'] : ''; 
+if (!empty($Initiale)) {
+    // Échapper l'entrée de l'utilisateur
+    $Initiale = $pdo->quote($Initiale);
+    
+    $stmt = $pdo->prepare("SELECT * FROM Sport WHERE Initiale = :initiale");
+    $stmt->bindParam(':initiale', $Initiale);
+    $stmt->execute();
+
+    $sports = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    echo "Les sports commençant par $Initiale sont les suivants : <br><br>"; 
+    foreach ($sports as $sport) {
+        echo "<div class='nomsport'>" . $sport['NomS'] . "</div>";
+        echo "<div class='cara_sport'>" . strval($sport['Resume']) . "</div><br>";
+    }
+}
+?>
+
                                     
                                     </p> 
                                 </td> 
