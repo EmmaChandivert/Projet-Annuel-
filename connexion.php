@@ -1,4 +1,5 @@
 <?php include "connexion_bdd.php"; ?>
+
 <doctype html>
 
 <html>
@@ -32,15 +33,15 @@
                     <input type="text" placeholder="Rechercher un sport">
                 </form> 
 
-                <div class="fondins" align="center">
-                    <form method="post" action="connexion_bdd.php">
+            
+                 <form method="post" action="connexion_bdd.php" class="fondins" align="center">
                         <br>
-                        <label> Votre pseudo : <input type="text" id="Pseudo2" name="Pseudo2" required placeholder="Pseudo2"> </label> <br>
+                        <label> Votre pseudo : <input type="text" id="Pseudo2" name="Pseudo2" required placeholder="Pseudo"> </label> <br>
                         <label> Votre mot de passe : <input type= "password" id="mdp" name="mdp" required placeholder="Mot de passe"> </label> <br>
                         <input type="submit" name="validation">
                     </label> <br>
                     </form>
-                </div>
+                
             </body>
 
     </html>

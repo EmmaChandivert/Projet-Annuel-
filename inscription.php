@@ -10,7 +10,7 @@
 
             <body>
                 <!-- titre de la page et lien vers la page d'acceuil -->
-                <a href="Index.php" style = "text-decoration : none" > <h1>WIKI SPORT </h1> </a>
+                <a href="Index.php" style = "text-decoration : none" class="image" > <h1>WIKI SPORT </h1> </a>
                 
                 <!-- tableau pour les boutons de connexion et d'inscription -->
                 <table  align="right" >

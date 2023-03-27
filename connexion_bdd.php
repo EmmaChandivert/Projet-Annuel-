@@ -5,6 +5,7 @@ $dbname = 'mysql:host=localhost;dbname=echandiv;port=1591;charset=utf8';
 $username = 'echandiv'; 
 $userpassword = '!22005383!'; 
 
+
 // connexion à la base de donnee
 try{
     $pdo = new PDO($dbname, $username, $userpassword); 
@@ -80,37 +81,71 @@ if(isset($_POST['validation'])){
     // header('Location:Connexion.php');
         
     // }
+
+    }
+
+
+   // Récupération des données de connexion soumises par le formulaire
+$nom = $_POST["Pseudo2"];
+$mdp = $_POST["Mdp"];
+
+// Préparation de la requête SQL pour vérifier si l'utilisateur existe dans la base de données
+$sql = "SELECT * FROM Utilisateur WHERE Identifiant = :nom AND Mdp = :mdp";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':nom', $nom);
+$stmt->bindParam(':mdp', $mdp);
+$stmt->execute();
+
+// Vérification si l'utilisateur existe
+if ($stmt->rowCount() > 0) {
+    // L'utilisateur existe, récupération des informations de l'utilisateur
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Stockage du profil et du statut dans des variables de session
+    // $_SESSION["profil"] = $row["profil"];
+    $_SESSION["Statut"] = $row["Statut"];
+    // Récupération du statut de l'utilisateur depuis la variable de session
+    $statut = $_SESSION["Statut"];
+    header("Location: Index.php");
+} 
+else {
+    // L'utilisateur n'existe pas, affichage d'un message d'erreur
+    if (empty($nom) || empty($mdp)) {
+        echo "";
+    } else {
+        echo "<div style='background-color: ivory; padding: 10px; text-align:center;'>Nom, prénom ou mot de passe incorrect. Veuillez vérifier vos informations et réessayer. Sinon, veuillez vous inscrire via le menu</div>"; 
+    }
 }
 
-// definition des variables utiles pour le forms des lettres  et verification que les variables existent bien 
-// $lettre = isset($_POST['car']) ? $_POST['car'] : '';
-
-// var_dump($lettre); 
+// Fermeture de la connexion
+$pdo = null;
 
 
-//     if ($lettre=='A'){
-//         header("Location:A.php"); 
-//     }
-//     else{
-//      echo ("err"); 
-//     }
 
 // pour deriger vers la page des lettre
-if(isset($_POST['bouton'])) {
-    $bouton = $_POST['bouton'];
-    $recherchelettre="SELECT * FROM Sport WHERE Initiale =$bouton";
-    $resultatlettre=$pdo->query($recherchelettre); 
-    // if ($resultatlettre->rowCount() > 0){
-    //     while($ligne = $resultatlettre->fetch(PDO::FETCH_ASSOC)){
-    //         echo "nom : " .$ligne["nom"]. "<br>"; 
-    //         echo "resume : " .$ligne["resume"] ."<br>"; 
-    //     }
-    // }
-    // else {
-    //     echo "erreur"
-    // }
-    header('Location:lettre.php');
-  }
+// if(isset($_POST['bouton'])){
+//     try {
+//     //     $lol="jean";
+//     //     $bouton = isset($_POST['bouton']);
+//     //     $recherchelettre=$pdo ->prepare('SELECT * FROM Sport WHERE Initiale = :bouton');
+         
+//     //     $recherchelettre-> bindParam(":bouton", $bouton);
+//     //     $recherchelettre-> execute();
+         
+//     //     $resultat = $recherchelettre->fetchAll();
+//     //     var_dump($resultat); 
+//     //     // foreach ($resultat as $ligne){
+//     //     //     echo "Nom du sport :".$ligne['NomS']."<br>";
+//     //     //     echo "Résumé : " . strval($ligne['Resume']) . "<br>";
+//     //     //     // Ajouter d'autres colonnes à afficher si nécessaire
+//     //     //     echo "<br>";
+         
+//     //     header('Location:lettre.php');
+//     // } 
+    
 
+//     catch(Exception $e){
+//         die('Erreur'.$e->getMessage());   
+//     } 
+// }
 
-?> 
+?>

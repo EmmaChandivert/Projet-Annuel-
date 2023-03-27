@@ -6,6 +6,17 @@ h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.image{
+    height: 300px; /* ajuster la hauteur selon vos besoins */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("sports.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 body{
     background-color: rgb(255, 245, 231) 
 

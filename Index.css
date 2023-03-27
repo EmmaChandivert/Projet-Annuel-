@@ -8,6 +8,17 @@ h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.image{
+    height: 300px; /* ajuster la hauteur selon vos besoins */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("sports.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 /* mise en page du fond de page */
 body{
     background-color: rgb(255, 245, 231); 
@@ -16,9 +27,13 @@ body{
 /* mise en page pour l'option de connexion */
 .fondconnexion{
     background-color:  rgb(237, 217, 189);
-    text-align: center;
+    text-align: right;
     width: 90%;
     height: 120%;
+}
+
+.fond{
+    background-color: rgb(237, 217, 189);
 }
 
 /* decoration des lettres */
@@ -80,3 +95,17 @@ body{
     background-color: #3e8e41; /* Nouvelle couleur de fond au survol */
   }
   
+a{
+    text-decoration:none;
+}
+
+.nomsport{
+    color: #d06e27;
+    font-size: 30;
+    font-weight: bold;
+    margin-left: 10%;
+}
+
+.cara_sport{
+    margin-left: 10%;
+}

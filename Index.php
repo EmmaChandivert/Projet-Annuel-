@@ -10,32 +10,29 @@
 
         <body>
             <!-- titre de la page et lien vers la page d'acceuil -->
-            <a href="Index.php" style = "text-decoration : none" > <h1>WIKI SPORT</h1> </a>
+            <a href="Index.php" style = "text-decoration : none" class="image"> <h1>WIKI SPORT</h1> </a>
             
-            <!-- tableau pour les boutons de connexion et d'inscription -->
-            <table  align="right" >
-                    <td class="fondconnexion">
+            
+            
+            <!-- tableau pour organiser la page  -->
+            <table>
+                <!-- ligne 1 -->
+                <tr>
+                <td class="fond">
+                </td>
+                <!-- tableau pour les boutons de connexion et d'inscription -->
+                <td class="fondconnexion">
                         <h5>
                             <br> 
                             <a href="connexion.php" style = "text-decoration : none" > Connexion </a> /
                             <a href="inscription.php" style = "text-decoration : none" > Inscription</a> 
                         </h5>
-                    </td>
-            </table> 
-            
-            <br><br>
-            <br><br>
-
-            <!-- barre de recherhce d'un sport  -->
-            <Form align="right">
-                <form method="post">
-                <input type="text" placeholder="Rechercher un sport">
-            </form> 
-
-
-            <!-- tableau pour organiser la page  -->
-            <table>
-                <!-- ligne 1 -->
+                        <!-- barre de recherhce d'un sport  -->
+                        <form method="post">
+                            <input type="text" placeholder="Rechercher un sport">
+                        </form>
+                </td>
+                </tr>
                 <tr>
                     <!-- case avec le formulaire pour la recherche d'un sport selon les criteres  -->
                     <td rowspan="2"<form class="fondcara"methode="post">
@@ -69,18 +66,33 @@
                     </td>
 
                     <!-- case du tableau avec les boutons sous forme de lettre qui renvoie sur les autres pages du sites -->
-                    <td> 
-                    <form method="post" action="">
-                    <p>Cliquez sur un bouton :</p>
-                    <button class="mon_bouton" type="submit" name="bouton" value="bouton1">A</button>
-                     <button type="submit" name="bouton" value="bouton2">B</button>
-                    <button type="submit" name="bouton" value="bouton3">C</button>
-                    </form>
-
-                        
-
-
-                    A  B C D E F G H I J K L M N O P Q R S T U V W X Y Z  
+                    <td align="center"> 
+                    <a href='lettre.php?Initiale=A' class='decolettre' > A </a> 
+                    <a href='lettre.php?Initiale=B' class='decolettre' > B </a>
+                    <a href='lettre.php?Initiale=C' class='decolettre' > C </a>
+                    <a href='lettre.php?Initiale=D' class='decolettre' > D </a>
+                    <a href='lettre.php?Initiale=E' class='decolettre' > E </a>
+                    <a href='lettre.php?Initiale=F' class='decolettre' > F </a>
+                    <a href='lettre.php?Initiale=G' class='decolettre' > G </a>
+                    <a href='lettre.php?Initiale=H' class='decolettre' > H </a>
+                    <a href='lettre.php?Initiale=I' class='decolettre' > I </a>
+                    <a href='lettre.php?Initiale=J' class='decolettre' > J </a>
+                    <a href='lettre.php?Initiale=K' class='decolettre' > K </a>
+                    <a href='lettre.php?Initiale=L' class='decolettre' > L </a>
+                    <a href='lettre.php?Initiale=M' class='decolettre' > M </a>
+                    <a href='lettre.php?Initiale=N' class='decolettre' > N </a>
+                    <a href='lettre.php?Initiale=O' class='decolettre' > O </a>
+                    <a href='lettre.php?Initiale=P' class='decolettre' > P </a>
+                    <a href='lettre.php?Initiale=Q' class='decolettre' > Q </a>
+                    <a href='lettre.php?Initiale=R' class='decolettre' > R </a>
+                    <a href='lettre.php?Initiale=S' class='decolettre' > S </a>
+                    <a href='lettre.php?Initiale=T' class='decolettre' > T </a>
+                    <a href='lettre.php?Initiale=U' class='decolettre' > U </a>
+                    <a href='lettre.php?Initiale=V' class='decolettre' > V </a>
+                    <a href='lettre.php?Initiale=W' class='decolettre' > W </a>
+                    <a href='lettre.php?Initiale=X' class='decolettre' > X </a>
+                    <a href='lettre.php?Initiale=Y' class='decolettre' > Y </a>
+                    <a href='lettre.php?Initiale=Y' class='decolettre' > Z </a>
                     </td>
                 </tr>
 

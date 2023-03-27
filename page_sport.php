@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <a href="Index.php" style = "text-decoration : none" > <h1>WIKI SPORT </h1> </a>
+        <a href="Index.php" style = "text-decoration : none" class="image"> <h1>WIKI SPORT </h1> </a>
          <br>
       
         <Form>
