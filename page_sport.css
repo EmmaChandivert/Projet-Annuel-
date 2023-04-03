@@ -60,10 +60,3 @@ form{
     color: black;
     text-shadow: 1px 1px rgb(130, 68, 10) ;
 }
-
-.tabsport{
-    border-color: rgb(0, 6, 6);
-    border-style:groove;
-    background-color: rgb(255, 173, 110);
-    border-inline-style : none; 
-}

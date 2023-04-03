@@ -4,94 +4,216 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title> A </title>
-        <link rel="stylesheet" href="Page sport.css">
+        <title> Page sport </title>
+        <link rel="stylesheet" href="Index.css">
     </head>
 
     <body>
-        <a href="Index.php" style = "text-decoration : none" class="image"> <h1>WIKI SPORT </h1> </a>
-         <br>
+        <a href="Index.php" class="image"> <h1>WIKI SPORT </h1> </a>
+        <br>
       
-        <Form>
-            <form method="post">
-                <input  type="text" placeholder="Rechercher un sport">
-        </FORm> 
-        <table>
-            <tr>    
-            </form> </td>
-            <td> 
-               <h3> <strong class="lettre">A </strong> B C D E F G H I J K L M N O P Q R S T U V W X Y Z </h3>
-            </td>
-            <td>
-                <table>
-                    <td  align="left" class="cell">
-                        <h5  class="conins" ><br> Connexion / Inscription</h5> 
-                    </td>
-                </table>
-            </td>
-        </tr>
-        </table>
-           
+        <table vertical-align="middle">
             <tr>
-                <td> 
-                    <article>
-                        <table class="tabsport" border="3px" align="center">
-                            <td  >
-                                <h2><i>"Nom d'un sport" </i> </h2>
-                            </td>
-                        <tr>
-                            <td >
-                                <p>
-                                <i> "Définition du sport avec caractériostique selon les informations données dans la base de données
-                                    Quam ob rem cave Catoni anteponas ne istum quidem ipsum, quem Apollo, ut ais, sapientissimum iudicavit; huius enim facta, illius dicta laudantur. De me autem, ut iam cum utroque vestrum loquar, sic habetote.
-                                    Isdem diebus Apollinaris Domitiani gener, paulo ante agens palatii Caesaris curam, ad Mesopotamiam missus a socero per militares numeros immodice scrutabatur, an quaedam altiora meditantis iam Galli secreta susceperint scripta, qui conpertis Antiochiae gestis per minorem Armeniam lapsus Constantinopolim petit exindeque per protectores retractus artissime tenebatur.
-                                </i>
-                                 </p> 
-                            </td> 
-                            <td rowspan="2">
-                                <img src="chat.jpg" alt="Miss teigne" height="100%" width="100%">
-                            </td>  
-                        </tr>
-                        <tr>
-                            <td >
-                                <p>
-                                <i> "Description du sport selon les informations données dans la base de données
-                                    Quam ob rem cave Catoni anteponas ne istum quidem ipsum, quem Apollo, ut ais, sapientissimum iudicavit; huius enim facta, illius dicta laudantur. De me autem, ut iam cum utroque vestrum loquar, sic habetote.
-                                    Isdem diebus Apollinaris Domitiani gener, paulo ante agens palatii Caesaris curam, ad Mesopotamiam missus a socero per militares numeros immodice scrutabatur, an quaedam altiora meditantis iam Galli secreta susceperint scripta, qui conpertis Antiochiae gestis per minorem Armeniam lapsus Constantinopolim petit exindeque per protectores retractus artissime tenebatur.
-                                </i>
-                                 </p> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>
-                                <i> "Championat selon les informations données dans la base de données
-                                    Quam ob rem cave Catoni anteponas ne istum quidem ipsum, quem Apollo, ut ais, sapientissimum iudicavit; huius enim facta, illius dicta laudantur. De me autem, ut iam cum utroque vestrum loquar, sic habetote.
-                                    Isdem diebus Apollinaris Domitiani gener, paulo ante agens palatii Caesaris curam, ad Mesopotamiam missus a socero per militares numeros immodice scrutabatur, an quaedam altiora meditantis iam Galli secreta susceperint scripta, qui conpertis Antiochiae gestis per minorem Armeniam lapsus Constantinopolim petit exindeque per protectores retractus artissime tenebatur.
-                                </i>
-                                 </p> 
-                            </td> 
-                            <td>
-                                <i> "cc les gars les coms c'est trop bien"
-                                </i>
-                            </td>  
-                        </tr>
-                         </table>  
-                    </article>
+                <td class="fond" align="center">
+                    <?php
+                    $letters = range('A', 'Z');
+                    foreach ($letters as $letter) {
+                    echo "<a href='lettre.php?Initiale={$letter}' class='decolettre'>{$letter}</a>"."&nbsp;";
+                    }
+                    ?>
+                </td>
+                <!-- tableau pour les boutons de connexion et d'inscription -->
+                <td class="fondconnexion">
+                        <h5>
+                            <br> 
+                            <a href="connexion.php" > Connexion </a>
+                            <a href="inscription.php"> Inscription</a> 
+                        </h5>
+                        <!-- barre de recherhce d'un sport  -->
+                        <form method="post">
+                            <input type="text" placeholder="Rechercher un sport">
+                        </form>
                 </td>
             </tr>
-            <br>
-            <table class="tabsport" border="3px" align="center">
-                            <td>
-                                <h2><i>On change ta gueule </i> </h2>
-                            </td>
-                            <td>
-                                <h2><i>ptdrr on veut pas de toi </i> </h2>
-                            </td>
-                            <td>
-                                <h2><i>les coms c'est bien </i> </h2>
-                            </td>
-                        <tr>
+        </table>
+        
+        <?php
+            session_start(); 
+
+            if(isset($_GET['nom_sport'])) {
+            $_SESSION['NomS'] = $_GET['nom_sport'];
+            }
+                            
+            $sql="SELECT * FROM Sport WHERE NomS = '{$_SESSION['NomS']}'"; 
+            ?> 
+
+            <br><br><br>
+
+        <table class="tabsport">
+            <tr>
+                <td colspan="2" align="center" class="tabsport" style="text-align:center" vertical-align="middle"> 
+                <?php   
+                    foreach($pdo->query($sql) as $ligne){
+                    echo "<div class='nomsport'>" . $ligne['NomS'] . "<br></div>";
+                    echo "<br>";
+                    }
+                ?> 
+                </td>
+            </tr>
+                 
+            <tr>
+                <td class="tabsport">
+                    <p>
+                        <u>
+                        Description du sport : 
+                        </u>
+                        <?php   
+                            echo "<div class='cara_sport'>" . $ligne['Resume'] . "<br></div>";
+                            echo "<br>";
+                        ?> 
+                    </p> 
+                </td>
+                <td rowspan="2"class="tabsport">
+                    <u>
+                    <?php
+                        echo '<h3><center><img src="data:image/jpeg;base64,' . base64_encode($ligne['Photo']) . '" height="75px" width="75px" alt="mon image" title="logo"/></h3>';
+                        echo "<center> Image illustrant :" . $_SESSION['NomS']. '</center>';
+                    
+                        ?>
+
+                    </u>
+                
+                </td> 
+            </tr>
+            <tr>
+                <td class="tabsport">
+                    <u>
+                    Caractéristiques du sport : 
+                    </u>
+                    <br>
+                   
+                    <?php
+                    foreach($pdo->query($sql) as $ligne){
+                        if ($ligne['SportCO'] == 1) {
+                            echo(" &nbsp;- Sport Collectif") . "<br>"; 
+                        }
+                        if ($ligne['SportIND'] == 1){
+                            echo(" &nbsp;- Sport Individuel"). "<br>"; 
+                        }
+                        if ($ligne['Exterieur']==1){
+                            echo(" &nbsp;- Sport en exterieur"). "<br>"; 
+                        }
+                        if ($ligne['Interieur']==1){
+                            echo(" &nbsp;- Sport en interieur"). "<br>"; 
+                        }
+                        if ($ligne['Ballon']==1){
+                            echo(" &nbsp;- Sport de ballon"). "<br>"; 
+                        }
+                        if ($ligne['Aquatique']==1){
+                            echo(" &nbsp;- Sport aquatique"). "<br>"; 
+                        }
+                        if ($ligne['Danse']==1){
+                            echo(" &nbsp;- Danse"). "<br>"; 
+                        }
+                        if ($ligne['Relaxation']==1){
+                            echo(" &nbsp;- Relaxation"). "<br>"; 
+                        }
+                        if ($ligne['Courir']==1){
+                            echo(" &nbsp;- Sport de course"). "<br>"; 
+                        }
+                        if ($ligne['Course']==1){
+                            echo(" &nbsp;- Sport de course de rapidité"). "<br>"; 
+                        }
+                        if ($ligne['Animaux']==1){
+                            echo(" &nbsp;- Sport avec des animaux"). "<br>"; 
+                        }
+                    }
+                
+                    
+                    
+                    ?>
+                    
+                    
+                </td>
+            </tr>
+            <tr>
+                <td class="tabsport">
+                    <u>
+                    Voici les commentaires récents :
+                    </u>
+                    <?php
+                    $id_sport = $_GET['nom_sport'];
+                    //affichage des commentaires
+                    $requete_commentaire = "SELECT * FROM Commentaire JOIN Sport ON nomSport = NomS WHERE nomSport LIKE '$id_sport' ORDER BY date_com DESC;";
+                                
+                    foreach ($pdo->query($requete_commentaire) as $row) {
+                        echo "<p><strong>" . $row['Utilisateur'] . "</strong> le " . $row['Date_com'] . "</p>";
+                        echo "<p>" . $row['Commentaire'] . "</p>";
+                        }
+                        
+                    ?>
+                    
+                </td>
+                <td class="tabsport">
+                    <u>
+                    Dernier Championnat : 
+                    </u> 
+                    <?php
+                    $sqll="SELECT cm.* FROM Competition_mondiale cm JOIN Sport s ON cm.Sport = s.NomS WHERE s.NomS = '{$_SESSION['NomS']}'"; 
+                    
+                    foreach($pdo->query($sqll) as $compet){
+                        echo "<br>"."Annee : &nbsp;".$compet['Annee'];
+                        echo "&nbsp; Vainqueur : &nbsp;". $compet['Vainqueur'];
+                        echo "<br>";
+                    }
+                    ?>
+                </td> 
+            </tr>
+        </table>  
+                
+        <br>
+        <table align="center">
+            <td>
+                <h2> Modification &nbsp;</h2>
+            </td>
+            <td>
+                <h2> Suppression &nbsp; </h2>
+            </td>
+            <tr>
+
+            
+            <td>
+                <h3>Ajouter un commentaire &nbsp; </h3>
+                
+                    <form method="POST">
+                    <label> Votre pseudo : <input type="text" id="Pseudo" name="Pseudo" required placeholder="Pseudo"> </label> <br>
+                    <label for="commentaire">Commentaire :</label> <br>
+                    <textarea name="comment_post" rows="5" required></textarea><br>
+
+                    <input type="submit" name="ajouter" value="Ajouter un commentaire">
+                    </form>
+
+                    <?php 
+                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter'])) {
+                        
+                        // Récupérer les données soumises
+                        $date_posted = date('Y-m-d');
+                        $comment_post = $_POST['comment_post'];
+                        $member_id = $_POST['Pseudo'];
+                        $nom_sport = $_GET['nom_sport'];
+                    
+                        // Insérer les données dans la base de données avec une requête préparée
+                        $requete_ins = $pdo->prepare("INSERT INTO Commentaire (nomSport, Commentaire, Utilisateur, Date_com) VALUES (:nomS, :com, :user, :date_com)");
+                        $requete_ins->bindValue(":nomS", $nom_sport, PDO::PARAM_STR);
+                        $requete_ins->bindValue(":com", $comment_post, PDO::PARAM_STR);
+                        $requete_ins->bindValue(":user", $member_id, PDO::PARAM_STR);
+                        $requete_ins->bindParam(":date_com", $date_posted);
+                        $requete_ins->execute();
+                    }
+                    ?>
+                    
+            </td>
+            </tr>
     </body>
 
 </html> 
