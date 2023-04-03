@@ -177,7 +177,7 @@
                 <h2> Modification &nbsp;</h2>
             </td>
             <td>
-                <h2> Suppression &nbsp; </h2>
+            <a href="suppression.php"> <h2> Suppression &nbsp; </h2> </a>
             </td>
             <tr>
 
@@ -209,7 +209,11 @@
                         $requete_ins->bindValue(":user", $member_id, PDO::PARAM_STR);
                         $requete_ins->bindParam(":date_com", $date_posted);
                         $requete_ins->execute();
+                        echo "Commentaire ajouté avec succès!";
+                    } catch (PDOException $e) {
+                        echo "Erreur : " . $e->getMessage();
                     }
+
                     ?>
                     
             </td>
